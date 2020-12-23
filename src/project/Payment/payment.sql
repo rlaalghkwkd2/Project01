@@ -10,3 +10,5 @@ CREATE TABLE product_record ( -- 판매된 물품정보 : 판매한순서, 제품ID, 제품이름,
 );
 
 CREATE SEQUENCE sales_number START WITH 1 INCREMENT BY 1 NOCACHE;
+
+8197762458659322

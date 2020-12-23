@@ -170,10 +170,8 @@ public class center_payment extends JPanel {
 
 					total_view.setText("결제금액 : " + total);
 				}
-
 			}
 		});
-
 		right_panel.add(reset);
 		reset.setBounds(45, 430, 400, 40);
 		reset.addActionListener(new ActionListener() {
