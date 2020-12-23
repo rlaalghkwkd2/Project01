@@ -8,8 +8,8 @@ public class Hikariconfig {
 	public Hikariconfig() {
 		
 		config.setJdbcUrl("jdbc:oracle:thin:@localhost:1521/XEPDB1");
-		config.setUsername("team4");
-		config.setPassword("1234");
+		config.setUsername("hr");
+		config.setPassword("123");
 		config.addDataSourceProperty("cachePrepStmts", "true");
 		config.addDataSourceProperty("prepStmtCacheSize", "250");
 		config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");

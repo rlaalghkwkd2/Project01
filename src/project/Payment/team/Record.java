@@ -213,7 +213,7 @@ public class Record {
 			conn = ds.getConnection();
 			pstmt = 
 					conn.prepareStatement(
-							"SELECT * FROM " + member
+							"SELECT * FROM ABC" + member
 							+ " ORDER BY sh_id DESC");
 			rs = pstmt.executeQuery();
 			while(rs.next()) {

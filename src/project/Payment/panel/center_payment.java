@@ -227,25 +227,25 @@ public class center_payment extends JPanel{
 		member_payment_btn.addActionListener(new ActionListener() {
 			
 			@Override
-			public void actionPerformed(ActionEvent e) {
-				
-				if (shoes_list != null) {
-					String resultStr = null;
-					resultStr = JOptionPane.showInputDialog("회원카드번호입력");
-					
-					if (pay.MemberPay(shoes_list, resultStr) != -1) {
-						JOptionPane.showMessageDialog(null, "결제완료");
-						ta.setText("");
-						total_view.setText("");
-					}else {
-						JOptionPane.showMessageDialog(null, "결제에 실패했습니다.");
-					}
-				}
-
-				
-				
-				
-				
+	         public void actionPerformed(ActionEvent e) {
+	            
+	            if (shoes_list != null) {
+	               String resultStr = null;
+	               resultStr = JOptionPane.showInputDialog("회원카드번호입력");
+	               
+	               if (pay.Membercheck(resultStr)) {
+	                  if (pay.MemberPay(shoes_list, resultStr) != -1) {
+	                     JOptionPane.showMessageDialog(null, "결제완료");
+	                     ta.setText("");
+	                     total_view.setText("");
+	                  }else {
+	                     JOptionPane.showMessageDialog(null, "결제에 실패했습니다.");
+	                  }
+	               }else {
+	                  JOptionPane.showMessageDialog(null, "카드번호가 정확히지않습니다.");
+	               }
+	               
+	            }
 			}
 		});
 		

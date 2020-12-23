@@ -17,6 +17,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
 import project.Payment.button.Cal_btn;
+import project.Payment.team.Record;
 
 public class Cal extends JPanel {
 	  /** The currently-interesting year (not modulo 1900!) */
@@ -150,7 +151,7 @@ public class Cal extends JPanel {
 	          today = String.format("%d%d%02d", yy,mm+1,dd);
 		        String title = String.format("%d년 %d월", yy,mm+1);
 		        jl.setText(title);
-		        new team.Record(today).Month_view(ta);
+		        new Record(today).Month_view(ta);
 	        }
 	      }
 	    });
@@ -185,7 +186,7 @@ public class Cal extends JPanel {
 	          today = String.format("%d%d%02d", yy,mm+1,dd);
 	          String title = String.format("%d년 %d월 %d일", yy,mm+1,dd);
 	          jl.setText(title);
-	          new team.Record(today).view(ta);
+	          new Record(today).view(ta);
 	        }
 	      }
 	    };

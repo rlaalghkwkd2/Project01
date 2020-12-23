@@ -21,6 +21,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import project.Payment.team.Payment;
+import project.Payment.team.Record;
 import project.Payment.tmp.Cal;
 
 public class Record_panel extends JPanel{
@@ -81,7 +82,7 @@ public class Record_panel extends JPanel{
 		JScrollPane scrollPane = new JScrollPane(ta);
 		scrollPane.setBounds(50,100,700,600);
 		record.add(scrollPane);
-		new team.Record(today.replaceAll("-", "")).view(ta);
+		new Record(today.replaceAll("-", "")).view(ta);
 		
 		
 		
@@ -107,7 +108,7 @@ public class Record_panel extends JPanel{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new team.Record(String.format("%d%d", cal.yy,cal.mm+1)).Month_view(ta);
+				new Record(String.format("%d%d", cal.yy,cal.mm+1)).Month_view(ta);
 				title.setText(String.format("%d년 %d월", cal.yy,cal.mm+1));
 				
 			}
@@ -137,7 +138,7 @@ public class Record_panel extends JPanel{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if (input1_check && !input1.getText().equals("")) {
-					new team.Record().seach_sales_number(ta, Integer.parseInt(input1.getText()));
+					new Record().seach_sales_number(ta, Integer.parseInt(input1.getText()));
 					input1.setText("판매번호입력");
 					input1_check = !input1_check;
 				}else if(input1_check) {
@@ -175,7 +176,7 @@ public class Record_panel extends JPanel{
 			public void actionPerformed(ActionEvent e) {
 				if (input2_check && !input2.getText().equals("")) {
 					title.setText(input2.getText());
-					new team.Record().seach_member(ta, input2.getText());
+					new Record().seach_member(ta, input2.getText());
 					input2.setText("회원번호입력");
 					input2_check = !input2_check;
 				}else if(input2_check) {
@@ -267,7 +268,7 @@ public class Record_panel extends JPanel{
 
 				if(check != -1 && check != -2 && check != -3) {
 					JOptionPane.showMessageDialog(null, "환불완료");
-					new team.Record(today.replaceAll("-", "")).view(ta);
+					new Record(today.replaceAll("-", "")).view(ta);
 				}else if(check == -2) {
 					JOptionPane.showMessageDialog(null, "회원카드번호를 입력해주세요");
 				}else if(check == -3){

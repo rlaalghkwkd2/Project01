@@ -78,4 +78,5 @@ public class New extends JPanel {
 		panel.add(btnInput);
 
 	}
+	
 }

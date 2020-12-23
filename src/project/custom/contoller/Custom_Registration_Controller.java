@@ -1,8 +1,10 @@
 package project.custom.contoller;
 
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.Properties;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
@@ -30,13 +32,14 @@ public void Custom_insert_create_table_info(String name, int age, String gender,
 		this.addr = addr;
 		this.card = cards.inputCard();
 	 
-		HikariConfig config = new HikariConfig();
-		config.setJdbcUrl("jdbc:mysql://localhost:3306/simpsons");
-		config.setUsername("bart");
-		config.setPassword("51mp50n");
-		config.addDataSourceProperty("cachePrepStmts", "true");
-		config.addDataSourceProperty("prepStmtCacheSize", "250");
-		config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
+		Properties props = new Properties();
+		props.setProperty("JdbcUrl", "jdbc:oracle:thin:@localhost:1521/XEPDB1");
+		props.setProperty("dataSource.user", "hr");
+		props.setProperty("dataSource.password", "123");
+		props.setProperty("dataSource.databaseName", "XEPDB1");
+		props.put("dataSource.logWriter", new PrintWriter(System.out));
+
+		HikariConfig config = new HikariConfig(props);
 		HikariDataSource ds = new HikariDataSource(config);
 	      try {
 	    	boolean flag = false;

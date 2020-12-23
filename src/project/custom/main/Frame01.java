@@ -245,7 +245,7 @@ public class Frame01 extends JFrame {
 		lblHome.setBounds(12, 10, 225, 20);
 		panelHomes.add(lblHome);
 
-		JPanel panelMainContent = new JPanel();
+		JPanel panelMainContent =new JPanel();
 		panelMainContent.setBounds(265, 15, 807, 533);
 		contentPane.add(panelMainContent);
 		panelMainContent.setLayout(null);

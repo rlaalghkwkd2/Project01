@@ -28,7 +28,7 @@ public class panelCustomCheck extends JPanel {
 			26, Image.SCALE_SMOOTH);
 	
 	public static Vector<String> columnNames = new Vector<String>(
-			Arrays.asList("결제번호", "신발이름", "신발재고", "신발사이즈", "신발가격", "신발구매일", "포인트 잔액", "신발 시리얼번호", "신발ID"));
+			Arrays.asList("결제번호", "신발넘버", "신발이", "신발사이즈", "신발ID", "신발구매일", "포인트 잔액", "신발 시리얼번호", "신발ID"));
 	public static DefaultTableModel dtm = new DefaultTableModel(columnNames, 0);
 	public static JTable table = new JTable(dtm);
 	Vector rowData;

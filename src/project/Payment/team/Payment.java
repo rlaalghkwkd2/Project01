@@ -190,7 +190,7 @@ public class Payment {
 			}
 			
 			pstmt = conn.prepareStatement("SELECT * "
-					+ "FROM (SELECT * FROM " + cardnumber + " ORDER BY sh_id DESC)"
+					+ "FROM (SELECT * FROM ABC" + cardnumber + " ORDER BY sh_id DESC)"
 					+ "WHERE ROWNUM = 1");
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
@@ -202,7 +202,7 @@ public class Payment {
 			}
 			
 			pstmt = 
-					conn.prepareStatement("INSERT INTO " + cardnumber + " VALUES ("
+					conn.prepareStatement("INSERT INTO ABC" + cardnumber + " VALUES ("
 							+ sales_number+", " // 판매번호
 							+ "?, "	// 신발이름
 							+ "?, " // 신발수량
@@ -388,7 +388,7 @@ public class Payment {
 			// 회원카드정보삭제
 			
 			pstmt = 
-					conn.prepareStatement("SELECT * FROM "+ member + " WHERE sales_number = ? AND shoes_serial_number = ?");
+					conn.prepareStatement("SELECT * FROM ABC"+ member + " WHERE sales_number = ? AND shoes_serial_number = ?");
 			int mpoint;
 			
 			pstmt.setInt(1, Integer.parseInt(sal_num));
@@ -400,7 +400,7 @@ public class Payment {
 				System.out.println(mpoint);
 				if(rs5.getInt("sh_count")-Integer.parseInt(info)<=0) {
 					pstmt = conn.prepareStatement(
-							"DELETE FROM "+ member
+							"DELETE FROM ABC"+ member
 							+ " WHERE sales_number = ? AND "
 							+ "shoes_serial_number = ? ");
 					pstmt.setInt(1, rs5.getInt("sales_number"));
@@ -409,7 +409,7 @@ public class Payment {
 					rs2.close();
 				}else {
 					pstmt = 
-							conn.prepareStatement("UPDATE "+ member
+							conn.prepareStatement("UPDATE ABC"+ member
 									+ " set sh_price = sh_price - (sh_price / sh_count * ?), sh_count = sh_count-? "
 									+ "WHERE sales_number = ? AND "
 									+ "shoes_serial_number = ?" );
@@ -422,7 +422,7 @@ public class Payment {
 				}
 			
 			pstmt = 
-					conn.prepareStatement("UPDATE " + member
+					conn.prepareStatement("UPDATE ABC" + member
 							+" set current_point = current_point - " + mpoint
 							+" WHERE sh_id >= " + rs5.getInt("sh_id"));
 			ResultSet rs2 = pstmt.executeQuery();
@@ -457,7 +457,34 @@ public class Payment {
 		return result;
 	}
 		
-	
+	public Boolean Membercheck(String cardnumber) {
+	      Boolean check = false;
+	      try {
+	         Connection conn = ds.getConnection();
+	         
+	         PreparedStatement pstmt = 
+	               conn.prepareStatement("SELECT * FROM ABC"+ cardnumber);
+	         ResultSet rs = pstmt.executeQuery();
+	         
+	         if (rs.next()) {
+	            check = true;
+	         }
+	         
+	         
+	         if(rs != null)rs.close();
+	         if(pstmt != null)pstmt.close();
+	         if(conn != null)conn.close();
+	         
+	         
+	         
+	         
+	      } catch (SQLException e) {
+	         e.printStackTrace();
+	      }
+	      
+	      return check;
+	      
+	   }
 	
 	
 	
