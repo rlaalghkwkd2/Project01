@@ -14,6 +14,8 @@ import javax.swing.JTextArea;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
+import project.Payment.team.Hikariconfig;
+
 public class Custom_Select_Controller {
 	public static Integer id;
 	public static String c_name;
@@ -24,21 +26,16 @@ public class Custom_Select_Controller {
 	public static String c_addr;	
 	public static String c_card;	
 	public static String black_Whether;
-	
+	HikariDataSource ds = null;
 	public static ArrayList<String> dataSize = new ArrayList<String>();
 	public static ArrayList<String> mo = new ArrayList<String>();
 
+	public Custom_Select_Controller() {
+	ds = new Hikariconfig().config();
+}
 	
 	public  void Custom_Card_select(String card) {
-		Properties props = new Properties();
-	      props.setProperty("JdbcUrl", "jdbc:oracle:thin:@localhost:1521/XEPDB1");
-	      props.setProperty("dataSource.user", "hr");
-	      props.setProperty("dataSource.password", "123");
-	      props.setProperty("dataSource.databaseName", "XEPDB1");
-	      props.put("dataSource.logWriter", new PrintWriter(System.out));
-
-	      HikariConfig config = new HikariConfig(props);
-	      HikariDataSource ds = new HikariDataSource(config); 	      
+		      
 	      try {
 			Connection conn = ds.getConnection();
 			String sql = "SELECT * FROM CUSTOM WHERE card = ?"; 
@@ -88,17 +85,6 @@ public class Custom_Select_Controller {
 	
 	
 	public void Custom_Name_Select(String name) {
-		
-		Properties props = new Properties();
-	      props.setProperty("JdbcUrl", "jdbc:oracle:thin:@localhost:1521/XEPDB1");
-	      props.setProperty("dataSource.user", "hr");
-	      props.setProperty("dataSource.password", "123");
-	      props.setProperty("dataSource.databaseName", "XEPDB1");
-	      props.put("dataSource.logWriter", new PrintWriter(System.out));
-
-	      HikariConfig config = new HikariConfig(props);
-	      HikariDataSource ds = new HikariDataSource(config); 	      
-	
 	      try {
 			Connection conn = ds.getConnection();
 			String sql = "SELECT * from CUSTOM WHERE name = ?";
@@ -150,15 +136,6 @@ public class Custom_Select_Controller {
 	}
 	
 	   public void allSelect() {
-		   Properties props = new Properties();
-		      props.setProperty("JdbcUrl", "jdbc:oracle:thin:@localhost:1521/XEPDB1");
-		      props.setProperty("dataSource.user", "hr");
-		      props.setProperty("dataSource.password", "123");
-		      props.setProperty("dataSource.databaseName", "XEPDB1");
-		      props.put("dataSource.logWriter", new PrintWriter(System.out));
-
-		      HikariConfig config = new HikariConfig(props);
-		      HikariDataSource ds = new HikariDataSource(config);
 		      try {
 				Connection conn = ds.getConnection();
 				String sql = "SELECT * FROM CUSTOM";
@@ -202,11 +179,6 @@ public class Custom_Select_Controller {
 				e.printStackTrace();
 			}	
 	      }
-	
-	   
-	  
-	
-	
 	
 }
 

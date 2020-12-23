@@ -12,21 +12,17 @@ import javax.swing.JTextField;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
+import project.Payment.team.Hikariconfig;
+
 
 public class Update_Contoller {
-
+	HikariDataSource ds = null;
+	
+	public Update_Contoller() {
+		ds = new Hikariconfig().config();
+	}
 	public void Update_Modify( String textName, String tGender, int textAge,String textPon,
 			String textEmail01, String textAddr, String textSearch)  {
-
-		Properties props = new Properties();
-		props.setProperty("JdbcUrl", "jdbc:oracle:thin:@localhost:1521/XEPDB1");
-		props.setProperty("dataSource.user", "hr");
-		props.setProperty("dataSource.password", "123");
-		props.setProperty("dataSource.databaseName", "XEPDB1");
-		props.put("dataSource.logWriter", new PrintWriter(System.out));
-
-		HikariConfig config = new HikariConfig(props);
-		HikariDataSource ds = new HikariDataSource(config);
 		try {
 
 			Connection conn = ds.getConnection();

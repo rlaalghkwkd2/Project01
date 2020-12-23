@@ -13,6 +13,7 @@ import java.util.TimeZone;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
+import project.Payment.team.Hikariconfig;
 import project.custom.panel.panelBlackIn;
 
 public class Black_Controller {
@@ -27,21 +28,14 @@ public class Black_Controller {
 	public static String b_card;
 	public static String b_reason;
 	public static String b_registration;
-
+	HikariDataSource ds = null;
 	public static ArrayList<String> mo = new ArrayList<String>();
 
+	public Black_Controller() {
+		ds = new Hikariconfig().config();
+	}
+	
 	public void Black_CardInsert(String card) {
-
-		Properties props = new Properties();
-		props.setProperty("JdbcUrl", "jdbc:oracle:thin:@localhost:1521/XEPDB1");
-		props.setProperty("dataSource.user", "hr");
-		props.setProperty("dataSource.password", "123");
-		props.setProperty("dataSource.databaseName", "XEPDB1");
-		props.put("dataSource.logWriter", new PrintWriter(System.out));
-
-		HikariConfig config = new HikariConfig(props);
-		HikariDataSource ds = new HikariDataSource(config);
-
 		try {
 			Connection conn = ds.getConnection();
 			String sql = "INSERT INTO blacklist values (?,?,?,?,?,?,?,?,?,?)";

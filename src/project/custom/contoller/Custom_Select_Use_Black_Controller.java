@@ -11,6 +11,8 @@ import java.util.Properties;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
+import project.Payment.team.Hikariconfig;
+
 public class Custom_Select_Use_Black_Controller {
 
 	public static Integer id;
@@ -25,17 +27,13 @@ public class Custom_Select_Use_Black_Controller {
 
 	public static ArrayList<String> dataSize = new ArrayList<String>();
 	public static ArrayList<String> mo = new ArrayList<String>();
-
+	HikariDataSource ds = null;
+	
+	public Custom_Select_Use_Black_Controller() {
+		ds = new Hikariconfig().config();
+	}
 	public void Custom_Card_Select(String card) {
-		Properties props = new Properties();
-		props.setProperty("JdbcUrl", "jdbc:oracle:thin:@localhost:1521/XEPDB1");
-		props.setProperty("dataSource.user", "hr");
-		props.setProperty("dataSource.password", "123");
-		props.setProperty("dataSource.databaseName", "XEPDB1");
-		props.put("dataSource.logWriter", new PrintWriter(System.out));
-
-		HikariConfig config = new HikariConfig(props);
-		HikariDataSource ds = new HikariDataSource(config);
+		
 
 		try {
 			Connection conn = ds.getConnection();

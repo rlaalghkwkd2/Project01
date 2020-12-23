@@ -9,6 +9,7 @@ import java.util.Properties;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
+import project.Payment.team.Hikariconfig;
 import project.custom.main.Create_card;
 
 public class Custom_Registration_Controller {
@@ -22,6 +23,11 @@ public class Custom_Registration_Controller {
 	public static String addr;
 	public static String card;
 	public static String black;
+	HikariDataSource ds = null;
+	
+	public Custom_Registration_Controller() {
+		ds = new Hikariconfig().config();
+	}
 	
 public void Custom_insert_create_table_info(String name, int age, String gender,String phone, String email,  String addr) {
 		this.name = name;
@@ -32,15 +38,7 @@ public void Custom_insert_create_table_info(String name, int age, String gender,
 		this.addr = addr;
 		this.card = cards.inputCard();
 	 
-		Properties props = new Properties();
-		props.setProperty("JdbcUrl", "jdbc:oracle:thin:@localhost:1521/XEPDB1");
-		props.setProperty("dataSource.user", "hr");
-		props.setProperty("dataSource.password", "123");
-		props.setProperty("dataSource.databaseName", "XEPDB1");
-		props.put("dataSource.logWriter", new PrintWriter(System.out));
-
-		HikariConfig config = new HikariConfig(props);
-		HikariDataSource ds = new HikariDataSource(config);
+		
 	      try {
 	    	boolean flag = false;
 	    	

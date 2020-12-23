@@ -9,20 +9,16 @@ import java.util.Properties;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
+import project.Payment.team.Hikariconfig;
+
 public class CustomAndBlack_Table_Delete {
 	String practiceType;
+	HikariDataSource ds = null;
 	public CustomAndBlack_Table_Delete(String startOrEnd) {
 		this.practiceType = startOrEnd;
+		ds = new Hikariconfig().config();
 		  if(practiceType.equalsIgnoreCase("start")) {
-		  Properties props = new Properties();
-	      props.setProperty("JdbcUrl", "jdbc:oracle:thin:@localhost:1521/XEPDB1");
-	      props.setProperty("dataSource.user", "hr");
-	      props.setProperty("dataSource.password", "123");
-	      props.setProperty("dataSource.databaseName", "XEPDB1");
-	      props.put("dataSource.logWriter", new PrintWriter(System.out));
-	
-	      HikariConfig config = new HikariConfig(props);
-	      HikariDataSource ds = new HikariDataSource(config);  
+		  
 	
 	 		try {
 	 			

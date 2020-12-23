@@ -15,6 +15,8 @@ import java.sql.ResultSet;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
+import project.Payment.team.Hikariconfig;
+
 
 public class CustomTable_Select_Controller  {
 	
@@ -29,19 +31,13 @@ public class CustomTable_Select_Controller  {
 	public static Integer sh_Id;
 	public static Integer sh_serialNum;
 	public static ArrayList<String> mo = new ArrayList<String>();
+	HikariDataSource ds = null;
 	
-	
-	public void ShowCustom(String card) {
-	
-	Properties props = new Properties();
-    props.setProperty("JdbcUrl", "jdbc:oracle:thin:@localhost:1521/XEPDB1");
-    props.setProperty("dataSource.user", "hr");
-    props.setProperty("dataSource.password", "123");
-    props.setProperty("dataSource.databaseName", "XEPDB1");
-    props.put("dataSource.logWriter", new PrintWriter(System.out));
+	public CustomTable_Select_Controller() {
+		ds = new Hikariconfig().config();
+	}
 
-    HikariConfig config = new HikariConfig(props);
-    HikariDataSource ds = new HikariDataSource(config); 	         
+	public void ShowCustom(String card) {
 	     
 			try {
 				Connection conn = ds.getConnection();
@@ -85,16 +81,7 @@ public class CustomTable_Select_Controller  {
 			}
 		
 }
-		public void ShowCustomNumber(String card, int number) {
-			Properties props = new Properties();
-		    props.setProperty("JdbcUrl", "jdbc:oracle:thin:@localhost:1521/XEPDB1");
-		    props.setProperty("dataSource.user", "hr");
-		    props.setProperty("dataSource.password", "123");
-		    props.setProperty("dataSource.databaseName", "XEPDB1");
-		    props.put("dataSource.logWriter", new PrintWriter(System.out));
-
-		    HikariConfig config = new HikariConfig(props);
-		    HikariDataSource ds = new HikariDataSource(config); 
+		public void ShowCustomNumber(String card, int number) {		
 		    try {
 				Connection conn = ds.getConnection();
 				String sql = "SELECT * FROM ABC" +card +" where sales_number = ?";
