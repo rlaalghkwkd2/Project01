@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/seunghwan/Downloads/slf4j-api-1.7.30.jar"/>
+	<classpathentry kind="lib" path="C:/Users/seunghwan/Downloads/HikariCP-3.4.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/seunghwan/Downloads/HikariCP-3.4.5-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/seunghwan/Desktop/eclipse/sqldeveloper-20.2.0.175.1842-x64/sqldeveloper/jdbc/lib/ojdbc8.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
