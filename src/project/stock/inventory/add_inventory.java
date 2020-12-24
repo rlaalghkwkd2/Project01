@@ -8,19 +8,13 @@ import java.sql.SQLException;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
+import project.Payment.team.Hikariconfig;
+
 public class add_inventory {
 	String a = null;
-
+	HikariDataSource ds = null;
 	public add_inventory(String name) {
-		HikariConfig config = new HikariConfig();
-		config.setJdbcUrl("jdbc:oracle:thin:@localhost:1522/XEPDB1");
-		config.setUsername("hr");
-		config.setPassword("1234");
-		config.addDataSourceProperty("cachePrepStmts", "true");
-		config.addDataSourceProperty("prepStmtCacheSize", "250");
-		config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
-
-		HikariDataSource ds = new HikariDataSource(config);
+		ds = new Hikariconfig().config();
 
 		try {
 			Connection conn = ds.getConnection();
@@ -36,9 +30,9 @@ public class add_inventory {
 						 rs.getInt("additional_inventory"),name);
 			}
 
-			rs.close();
-			pstmt.close();
-			conn.close();
+			if(conn != null) conn.close();
+			if(pstmt != null) pstmt.close();
+			if(rs != null) rs.close();
 
 		} catch (SQLException e) {
 			e.printStackTrace();

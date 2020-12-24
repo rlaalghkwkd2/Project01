@@ -82,54 +82,54 @@ public class panelUpdate extends JPanel implements ItemListener {
 
 		JLabel lblName = new JLabel("\uC774\uB984:");
 		lblName.setHorizontalAlignment(SwingConstants.CENTER);
-		lblName.setFont(new Font("∏º¿∫ ∞ÌµÒ Semilight", Font.PLAIN, 15));
+		lblName.setFont(new Font("»ﬁ∏’∆Ì¡ˆ√º", Font.PLAIN, 16));
 		lblName.setBounds(48, 175, 41, 24);
 		panelMenu.add(lblName);
 
 		JLabel lblYear = new JLabel("\uB098\uC774:");
 		lblYear.setHorizontalAlignment(SwingConstants.CENTER);
-		lblYear.setFont(new Font("∏º¿∫ ∞ÌµÒ Semilight", Font.PLAIN, 15));
+		lblYear.setFont(new Font("»ﬁ∏’∆Ì¡ˆ√º", Font.PLAIN, 16));
 		lblYear.setBounds(48, 226, 41, 24);
 		panelMenu.add(lblYear);
 
 		JLabel lblGender = new JLabel("\uC131\uBCC4:");
 		lblGender.setHorizontalAlignment(SwingConstants.CENTER);
-		lblGender.setFont(new Font("∏º¿∫ ∞ÌµÒ Semilight", Font.PLAIN, 15));
+		lblGender.setFont(new Font("»ﬁ∏’∆Ì¡ˆ√º", Font.PLAIN, 16));
 		lblGender.setBounds(48, 277, 41, 24);
 		panelMenu.add(lblGender);
 
 		JLabel lblPhone = new JLabel("\uD578\uB4DC\uD3F0:");
 		lblPhone.setHorizontalAlignment(SwingConstants.CENTER);
-		lblPhone.setFont(new Font("∏º¿∫ ∞ÌµÒ Semilight", Font.PLAIN, 15));
+		lblPhone.setFont(new Font("»ﬁ∏’∆Ì¡ˆ√º", Font.PLAIN, 16));
 		lblPhone.setBounds(38, 328, 48, 24);
 		panelMenu.add(lblPhone);
 
 		JLabel lblEmail = new JLabel("Email:");
 		lblEmail.setHorizontalAlignment(SwingConstants.CENTER);
-		lblEmail.setFont(new Font("∏º¿∫ ∞ÌµÒ Semilight", Font.PLAIN, 15));
+		lblEmail.setFont(new Font("»ﬁ∏’∆Ì¡ˆ√º", Font.PLAIN, 16));
 		lblEmail.setBounds(41, 379, 48, 21);
 		panelMenu.add(lblEmail);
 
 		JLabel lblAddr = new JLabel("\uC8FC\uC18C:");
 		lblAddr.setHorizontalAlignment(SwingConstants.CENTER);
-		lblAddr.setFont(new Font("∏º¿∫ ∞ÌµÒ Semilight", Font.PLAIN, 15));
+		lblAddr.setFont(new Font("»ﬁ∏’∆Ì¡ˆ√º", Font.PLAIN, 16));
 		lblAddr.setBounds(48, 430, 41, 24);
 		panelMenu.add(lblAddr);
 
 		textName = new JTextField();
 		textName.setColumns(10);
-		textName.setBounds(100, 177, 73, 26);
+		textName.setBounds(101, 173, 73, 26);
 		textName.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 		panelMenu.add(textName);
 
 		textSearch = new JTextField();
-		textSearch.setBounds(145, 116, 250, 26);
+		textSearch.setBounds(101, 116, 250, 26);
 		panelMenu.add(textSearch);
 		textSearch.setColumns(10);
 		textSearch.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 
 		textAge = new JTextField();
-		textAge.setBounds(100, 228, 73, 26);
+		textAge.setBounds(100, 224, 73, 26);
 		panelMenu.add(textAge);
 		textAge.setColumns(10);
 		textAge.setBorder(BorderFactory.createLineBorder(Color.BLACK));
@@ -137,7 +137,7 @@ public class panelUpdate extends JPanel implements ItemListener {
 		DefaultComboBoxModel<String> ponDe = new DefaultComboBoxModel<String>(ponlist);
 		ponBox = new JComboBox(ponDe);
 		ponBox.setSelectedItem(ponlist[0]);
-		ponBox.setBounds(100, 329, 73, 26);
+		ponBox.setBounds(100, 326, 73, 26);
 		panelMenu.add(ponBox);
 		textPon00 = new JTextField();
 		panelMenu.add(textPon00);
@@ -145,25 +145,25 @@ public class panelUpdate extends JPanel implements ItemListener {
 		ponBox.addActionListener(new ComboBoxInput_Action(panelMenu, textPon00, ponlist));
 		textPon01 = new JTextField();
 		textPon01.setColumns(10);
-		textPon01.setBounds(185, 330, 73, 26);
+		textPon01.setBounds(185, 326, 73, 26);
 		panelMenu.add(textPon01);
 		textPon01.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 
 		textPon02 = new JTextField();
 		textPon02.setColumns(10);
-		textPon02.setBounds(270, 330, 73, 26);
+		textPon02.setBounds(270, 326, 73, 26);
 		panelMenu.add(textPon02);
 		textPon02.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 
 		textEmail01 = new JTextField();
 		textEmail01.setColumns(10);
-		textEmail01.setBounds(100, 379, 90, 26);
+		textEmail01.setBounds(100, 376, 90, 26);
 		panelMenu.add(textEmail01);
 		textEmail01.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 
 		textEmail02 = new JTextField();
 		textEmail02.setColumns(10);
-		textEmail02.setBounds(210, 379, 90, 26);
+		textEmail02.setBounds(210, 376, 90, 26);
 		panelMenu.add(textEmail02);
 		textEmail02.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 		
@@ -171,38 +171,41 @@ public class panelUpdate extends JPanel implements ItemListener {
 		
 		JLabel gol = new JLabel("@");
 		gol.setHorizontalAlignment(SwingConstants.CENTER);
-		gol.setBounds(188, 379, 23, 25);
+		gol.setBounds(188, 376, 23, 25);
 		panelMenu.add(gol);
 
 		
 
 		eMailBox = new JComboBox(eMdef);
-		eMailBox.setBounds(311, 378, 90, 26);
+		eMailBox.setBounds(311, 376, 90, 26);
 		eMailBox.addActionListener(new ComboBoxInput_Action(panelMenu, textEmail02, maillist));
 		panelMenu.add(eMailBox);
 		
 		textAddr = new JTextField();
 		textAddr.setColumns(10);
 		textAddr.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-		textAddr.setBounds(100, 432, 250, 26);
+		textAddr.setBounds(100, 429, 250, 26);
 		panelMenu.add(textAddr);
 		textAddr.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 		textEmail02.setEditable(false);
 		JLabel lblAge = new JLabel("\uC138");
+		lblAge.setFont(new Font("»ﬁ∏’∆Ì¡ˆ√º", Font.PLAIN, 16));
 		lblAge.setBounds(177, 227, 20, 26);
 		panelMenu.add(lblAge);
 
 		JButton btnSearch = new JButton(new ImageIcon(img_logo));
 		btnSearch.setFont(new Font("∏º¿∫ ∞ÌµÒ Semilight", Font.PLAIN, 15));
-		btnSearch.setBounds(396, 116, 35, 26);
+		btnSearch.setBounds(353, 116, 35, 26);
 		panelMenu.add(btnSearch);
+		checkMan.setFont(new Font("»ﬁ∏’∆Ì¡ˆ√º", Font.PLAIN, 16));
 		checkMan.setBackground(new Color(255, 160, 122));
 
-		checkMan.setBounds(97, 280, 41, 23);
+		checkMan.setBounds(97, 277, 41, 23);
 		panelMenu.add(checkMan);
+		checkWomen.setFont(new Font("»ﬁ∏’∆Ì¡ˆ√º", Font.PLAIN, 16));
 		checkWomen.setBackground(new Color(255, 160, 122));
 
-		checkWomen.setBounds(145, 280, 41, 23);
+		checkWomen.setBounds(145, 277, 41, 23);
 		panelMenu.add(checkWomen);
 
 		btnSearch.addActionListener(new PanelUpdate_Search_Action(this, textSearch, textName, textAge, tGender, textPon01,
@@ -221,6 +224,7 @@ public class panelUpdate extends JPanel implements ItemListener {
 		panelTitle.add(lblNewLabel);
 
 		JButton btnUpdate = new JButton("\uC218\uC815");
+		btnUpdate.setFont(new Font("»ﬁ∏’∆Ì¡ˆ√º", Font.PLAIN, 16));
 		btnUpdate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				new Update_Contoller().Update_Modify(						
@@ -241,11 +245,16 @@ public class panelUpdate extends JPanel implements ItemListener {
 		textArea.setForeground(new Color(255, 0, 0));
 		textArea.setBackground(new Color(255, 215, 0));
 		textArea.setRows(20);
-		textArea.setFont(new Font("∏º¿∫ ∞ÌµÒ Semilight", Font.PLAIN, 15));
-		textArea.setText("\r\n                 \u203B\uC218\uC815 \uD560 \uC2DC \uC8FC\uC758\uD560 \uC810\r\n\t\t\r\n");
+		textArea.setFont(new Font("»ﬁ∏’∆Ì¡ˆ√º", Font.PLAIN, 18));
+		textArea.setText("\r\n\r\n\r\n\r\n\r\n      \u203B \uC218\uC815 \uD560 \uC2DC \uC8FC\uC758\uD560 \uC810 \u203B\r\n\t\t\r\n     \uBC18\uB4DC\uC2DC \uCE74\uB4DC\uBC88\uD638\uB97C \uBA3C\uC800 \uC785\uB825 \uD6C4\r\n\r\n           \uC815\uBCF4\uB97C \uBC1B\uC544\uC624\uC138\uC694!\r\n\r\n     \uBCF8\uC778\uC758 \uC2E4\uC218\uB85C \uC778\uD574 \uC798\uBABB \uC218\uC815\uB418\uC5B4\r\n\r\n      \uBC1B\uB294 \uBD88\uC774\uC775\uC5D0\uB300\uD574\uC11C\uB294 \uC804\uC801\uC73C\uB85C\r\n\r\n         \uB2F9\uC0AC\uC790 \uBCF8\uC778 \uCC45\uC784\uC785\uB2C8\uB2E4.\r\n\t  \t");
 		textArea.setEditable(false);
 		textArea.setBounds(511, 71, 294, 459);
 		panelMenu.add(textArea);
+		
+		JLabel lblNewLabel_1 = new JLabel("\uCE74\uB4DC\uBC88\uD638:");
+		lblNewLabel_1.setFont(new Font("»ﬁ∏’∆Ì¡ˆ√º", Font.PLAIN, 16));
+		lblNewLabel_1.setBounds(30, 118, 57, 26);
+		panelMenu.add(lblNewLabel_1);
 
 		checkMan.addItemListener(this);
 		checkWomen.addItemListener(this);

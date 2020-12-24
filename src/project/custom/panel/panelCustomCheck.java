@@ -59,7 +59,7 @@ public class panelCustomCheck extends JPanel {
 
 		JButton btnCardSearch = new JButton(new ImageIcon(img_logo));
 		btnCardSearch.setFont(new Font("¸¼Àº °íµñ Semilight", Font.PLAIN, 15));
-		btnCardSearch.setBounds(331, 122, 35, 26);
+		btnCardSearch.setBounds(320, 122, 35, 26);
 		add(btnCardSearch);
 
 		JScrollPane scrollPane =new JScrollPane();
@@ -89,7 +89,7 @@ public class panelCustomCheck extends JPanel {
 		
 		JButton btnNameSearch = new JButton(new ImageIcon(img_logo));
 		btnNameSearch.setFont(new Font("¸¼Àº °íµñ Semilight", Font.PLAIN, 15));
-		btnNameSearch.setBounds(730, 122, 35, 26);
+		btnNameSearch.setBounds(719, 122, 35, 26);
 		add(btnNameSearch);
 		textNameSearch.addActionListener(new Panel_Check_Numer_Action(this, rowData));
 		btnNameSearch.addActionListener(new Panel_Check_Numer_Action(this, rowData));

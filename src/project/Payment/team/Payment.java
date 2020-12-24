@@ -87,19 +87,21 @@ public class Payment {
 				rs = pstmt.executeQuery();
 			}
 
-			pstmt = conn.prepareStatement("SELECT sales_number.nextval FROM ssn");
+			
 			rs = pstmt.executeQuery();
 
 			String sales_number = "sales_number.currval";
 
 			pstmt = conn.prepareStatement("INSERT INTO product_record VALUES (" + sales_number + ", " // 시퀀스번호
+//			pstmt = conn.prepareStatement("INSERT INTO product_record VALUES (sales_number.nextval,"  // 시퀀스번호
 					+ "?, " // 시리얼넘버
 					+ "?, " // 제품이름
 					+ "?, " // 제품사이즈
 					+ "?, " // 제품수량
 					+ "?, " // 제품가격
 					+ "sysdate," + "?)"); // 회원카드결제확인
-
+			
+			pstmt = conn.prepareStatement("SELECT sales_number.nextval FROM ssn");
 			for (Entry<String, Integer[]> entry : productlist.entrySet()) {
 
 				String shose_name = entry.getKey().split(" - ")[0];
@@ -158,7 +160,7 @@ public class Payment {
 
 			String sales_number = "sales_number.currval";
 
-			pstmt = conn.prepareStatement("INSERT INTO product_record VALUES (" + sales_number + ", " // 시퀀스번호
+			pstmt = conn.prepareStatement("INSERT INTO product_record VALUES (sales_number.nextval," // 시퀀스번호
 					+ "?, " // 시리얼넘버
 					+ "?, " // 제품이름
 					+ "?, " // 제품사이즈

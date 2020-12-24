@@ -10,23 +10,16 @@ import java.util.Properties;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
+import project.Payment.team.Hikariconfig;
 import project.staff.attendance.Get_name;
 
 public class Attendance_information {
 	
 	String attendance_check = null;
-
+	HikariDataSource ds = null;
 	public Attendance_information(int emp_id, String check_date) {
 		// 사원 번호와 날짜 입력 시 정상, 지각, 결석 여부 출력
-		Properties props = new Properties();
-	   	 props.setProperty("JdbcUrl", "jdbc:oracle:thin:@localhost:1521/XEPDB1");
-		      props.setProperty("dataSource.user", "hr");
-		      props.setProperty("dataSource.password", "123");
-		      props.setProperty("dataSource.databaseName", "XEPDB1");
-		      props.put("dataSource.logWriter", new PrintWriter(System.out));
-
-		      HikariConfig config = new HikariConfig(props);
-		      HikariDataSource ds = new HikariDataSource(config);
+		ds = new Hikariconfig().config();
 
 		try {
 			Connection conn = ds.getConnection();

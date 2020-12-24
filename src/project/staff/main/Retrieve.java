@@ -33,7 +33,7 @@ public class Retrieve extends JFrame {
 		panel.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(Retrieve.class.getResource("/image/abc2.jpg")));
+		lblNewLabel.setIcon(new ImageIcon(Retrieve.class.getResource("/project/staff/image/abc2.jpg")));
 		lblNewLabel.setBounds(189, 10, 529, 212);
 		panel.add(lblNewLabel);
 		
@@ -41,18 +41,18 @@ public class Retrieve extends JFrame {
 		JButton btn1 = new JButton("");
 		btn1.setBackground(new Color(255, 215, 0));
 		btn1.setBorderPainted(false);
-		btn1.setIcon(new ImageIcon(Retrieve.class.getResource("/image/search.PNG")));
+		btn1.setIcon(new ImageIcon(Retrieve.class.getResource("/project/staff/image/search.PNG")));
 		btn1.setBounds(74, 305, 195, 195);
 		panel.add(btn1);
 		btn1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				btn1.setIcon(new ImageIcon(Retrieve.class.getResource("/image/click.PNG")));
+				btn1.setIcon(new ImageIcon(Retrieve.class.getResource("/project/staff/image/click.PNG")));
 			}
 			
 			@Override
 			public void mouseExited(MouseEvent e) {
-				btn1.setIcon(new ImageIcon(Retrieve.class.getResource("/image/search.PNG")));
+				btn1.setIcon(new ImageIcon(Retrieve.class.getResource("/project/staff/image/search.PNG")));
 			}
 		});
 		btn1.addActionListener(new ActionListener() {
@@ -63,19 +63,19 @@ public class Retrieve extends JFrame {
 		
 		JButton btn2 = new JButton("");
 		btn2.setBorderPainted(false);
-		btn2.setIcon(new ImageIcon(Retrieve.class.getResource("/image/search.PNG")));
+		btn2.setIcon(new ImageIcon(Retrieve.class.getResource("/project/staff/image/search.PNG")));
 		btn2.setBackground(new Color(255, 215, 0));
 		btn2.setBounds(336, 305, 195, 195);
 		panel.add(btn2);
 		btn2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				btn2.setIcon(new ImageIcon(Retrieve.class.getResource("/image/click.PNG")));
+				btn2.setIcon(new ImageIcon(Retrieve.class.getResource("/project/staff/image/click.PNG")));
 			}
 			
 			@Override
 			public void mouseExited(MouseEvent e) {
-				btn2.setIcon(new ImageIcon(Retrieve.class.getResource("/image/search.PNG")));
+				btn2.setIcon(new ImageIcon(Retrieve.class.getResource("/project/staff/image/search.PNG")));
 			}
 		});
 		btn2.addActionListener(new ActionListener() {
@@ -86,19 +86,19 @@ public class Retrieve extends JFrame {
 		
 		JButton btn3 = new JButton("");
 		btn3.setBorderPainted(false);
-		btn3.setIcon(new ImageIcon(Retrieve.class.getResource("/image/search.PNG")));
+		btn3.setIcon(new ImageIcon(Retrieve.class.getResource("/project/staff/image/search.PNG")));
 		btn3.setBackground(new Color(255, 215, 0));
 		btn3.setBounds(615, 305, 195, 195);
 		panel.add(btn3);
 		btn3.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				btn3.setIcon(new ImageIcon(Retrieve.class.getResource("/image/click.PNG")));
+				btn3.setIcon(new ImageIcon(Retrieve.class.getResource("/project/staff/image/click.PNG")));
 			}
 			
 			@Override
 			public void mouseExited(MouseEvent e) {
-				btn3.setIcon(new ImageIcon(Retrieve.class.getResource("/image/search.PNG")));
+				btn3.setIcon(new ImageIcon(Retrieve.class.getResource("/project/staff/image/search.PNG")));
 			}
 		});
 		btn3.addActionListener(new ActionListener() {
@@ -108,18 +108,18 @@ public class Retrieve extends JFrame {
 		});
 		
 		JButton back_btn = new JButton("");
-		back_btn.setIcon(new ImageIcon(Event.class.getResource("/image/back1.PNG")));
+		back_btn.setIcon(new ImageIcon(Event.class.getResource("/project/staff/image/back1.PNG")));
 		back_btn.setBounds(0, 0, 32, 28);
 		panel.add(back_btn);
 		back_btn.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				back_btn.setIcon(new ImageIcon(Retrieve.class.getResource("/image/back2.PNG")));
+				back_btn.setIcon(new ImageIcon(Retrieve.class.getResource("/project/staff/image/back2.PNG")));
 			}
 			
 			@Override
 			public void mouseExited(MouseEvent e) {
-				back_btn.setIcon(new ImageIcon(Retrieve.class.getResource("/image/back1.PNG")));
+				back_btn.setIcon(new ImageIcon(Retrieve.class.getResource("/project/staff/image/back1.PNG")));
 			}
 		});
 		

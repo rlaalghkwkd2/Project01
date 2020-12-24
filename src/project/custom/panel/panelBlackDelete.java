@@ -38,6 +38,7 @@ public class panelBlackDelete extends JPanel {
 	JPanel panelTtile = new JPanel();
 	JLabel lblTitle = new JLabel("\uBE14\uB799\uD68C\uC6D0 \uD574\uC81C");
 	JTextField textSearch = new JTextField();
+	private final JLabel lblNewLabel = new JLabel("\uCE74\uB4DC\uBC88\uD638:");
 
 	public panelBlackDelete() {
 
@@ -51,7 +52,7 @@ public class panelBlackDelete extends JPanel {
 		add(scrollpane);
 		scrollpane.setViewportView(table);
 
-		textSearch.setBounds(12, 122, 250, 26);
+		textSearch.setBounds(76, 122, 250, 26);
 
 		textSearch.addActionListener(new Panel_BlackDelete_SelectAction(this, rowData, textSearch, table));
 		add(textSearch);
@@ -60,7 +61,7 @@ public class panelBlackDelete extends JPanel {
 		btnSearch.setFont(new Font("∏º¿∫ ∞ÌµÒ Semilight", Font.PLAIN, 15));
 		btnSearch.addActionListener(new Panel_BlackDelete_SelectAction(this, rowData, textSearch, table));
 
-		btnSearch.setBounds(264, 122, 35, 26);
+		btnSearch.setBounds(328, 122, 35, 26);
 		add(btnSearch);
 
 		panelTtile.setBackground(new Color(255, 245, 238));
@@ -74,7 +75,9 @@ public class panelBlackDelete extends JPanel {
 		panelTtile.add(lblTitle);
 
 		JButton btnDelete = new JButton("\uC0AD\uC81C");
-		btnDelete.setFont(new Font("∏º¿∫ ∞ÌµÒ Semilight", Font.PLAIN, 15));
+		btnDelete.setForeground(Color.RED);
+		btnDelete.setBackground(Color.WHITE);
+		btnDelete.setFont(new Font("»ﬁ∏’∆Ì¡ˆ√º", Font.PLAIN, 15));
 		btnDelete.setBounds(730, 500, 65, 26);
 		add(btnDelete);
 		table.setFont(new Font("∏º¿∫ ∞ÌµÒ Semilight", Font.PLAIN, 13));
@@ -90,6 +93,10 @@ public class panelBlackDelete extends JPanel {
 		ShowTable();
 
 		table.setCellSelectionEnabled(true);
+		lblNewLabel.setFont(new Font("»ﬁ∏’∆Ì¡ˆ√º", Font.PLAIN, 16));
+		lblNewLabel.setBounds(12, 122, 65, 26);
+		
+		add(lblNewLabel);
 
 		ListSelectionModel select = table.getSelectionModel();
 		select.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);

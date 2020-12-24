@@ -10,19 +10,13 @@ import java.util.Properties;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
-public class Get_check_in_today {
+import project.Payment.team.Hikariconfig;
 
+public class Get_check_in_today {
+	HikariDataSource ds = null;
 	String checked_in = null;
 	public Get_check_in_today(int emp_id, String check_date) {
-		Properties props = new Properties();
-	   	 props.setProperty("JdbcUrl", "jdbc:oracle:thin:@localhost:1521/XEPDB1");
-		      props.setProperty("dataSource.user", "hr");
-		      props.setProperty("dataSource.password", "123");
-		      props.setProperty("dataSource.databaseName", "XEPDB1");
-		      props.put("dataSource.logWriter", new PrintWriter(System.out));
-
-		      HikariConfig config = new HikariConfig(props);
-		      HikariDataSource ds = new HikariDataSource(config);
+		ds = new Hikariconfig().config();
 	      
 	      try {
 	         Connection conn = ds.getConnection();

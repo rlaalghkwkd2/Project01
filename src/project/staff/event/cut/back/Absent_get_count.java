@@ -11,25 +11,19 @@ import java.util.Properties;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
+import project.Payment.team.Hikariconfig;
+
 public class Absent_get_count {
 	ArrayList<String> dpt_names = new ArrayList<>();
 	ArrayList<Integer> counts = new ArrayList<>();
 	ArrayList<Integer> indexs = new ArrayList<>();
-	
+	HikariDataSource ds = null;
 	int max_value = 0;
 	int max_index = 0;
 
 	public Absent_get_count() {
-
-		Properties props = new Properties();
-		props.setProperty("JdbcUrl", "jdbc:oracle:thin:@localhost:1521/XEPDB1");
-		props.setProperty("dataSource.user", "hr");
-		props.setProperty("dataSource.password", "123");
-		props.setProperty("dataSource.databaseName", "XEPDB1");
-		props.put("dataSource.logWriter", new PrintWriter(System.out));
-
-		HikariConfig config = new HikariConfig(props);
-		HikariDataSource ds = new HikariDataSource(config);
+		ds = new Hikariconfig().config();
+	
 
 		try {
 			Connection conn = ds.getConnection();

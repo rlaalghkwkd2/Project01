@@ -47,7 +47,7 @@ public class swingtest extends JFrame{
 	
 	
 	public swingtest() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocation(150, 70);
 		setSize(1600, 900);
 		setLayout(new BorderLayout());

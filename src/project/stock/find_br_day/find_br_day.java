@@ -8,20 +8,14 @@ import java.sql.SQLException;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+
+import project.Payment.team.Hikariconfig;
 //브랜드 이름 넣으면 브랜드 고유번호랑 브랜드 행사 날짜 알려주는 기능
 public class find_br_day {
 	String a = null;
-
+	HikariDataSource ds = null;
 	public find_br_day(String name) {
-		HikariConfig config = new HikariConfig();
-		config.setJdbcUrl("jdbc:oracle:thin:@localhost:1522/XEPDB1");
-		config.setUsername("hr");
-		config.setPassword("1234");
-		config.addDataSourceProperty("cachePrepStmts", "true");
-		config.addDataSourceProperty("prepStmtCacheSize", "250");
-		config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
-
-		HikariDataSource ds = new HikariDataSource(config);
+		ds = new Hikariconfig().config();
 
 		try {
 			Connection conn = ds.getConnection();
@@ -35,9 +29,9 @@ public class find_br_day {
 				a = String.format("브랜드 데이:%s\n브랜드명:%s\n" , rs.getString("br_event_day"),name);
 			}
 
-			rs.close();
-			pstmt.close();
-			conn.close();
+			if(conn != null) conn.close();
+			if(pstmt != null) pstmt.close();
+			if(rs != null) rs.close();
 
 		} catch (SQLException e) {
 			e.printStackTrace();

@@ -63,18 +63,18 @@ public class Retrieve_emp_main extends JFrame {
 		});
 		
 		JButton back_btn = new JButton("");
-		back_btn.setIcon(new ImageIcon(Event.class.getResource("/image/back1.PNG")));
+		back_btn.setIcon(new ImageIcon(Event.class.getResource("/project/staff/image/back1.PNG")));
 		back_btn.setBounds(0, 0, 32, 28);
 		panel.add(back_btn);
 		back_btn.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				back_btn.setIcon(new ImageIcon(Event.class.getResource("/image/back2.PNG")));
+				back_btn.setIcon(new ImageIcon(Event.class.getResource("/project/staff/image/back2.PNG")));
 			}
 			
 			@Override
 			public void mouseExited(MouseEvent e) {
-				back_btn.setIcon(new ImageIcon(Event.class.getResource("/image/back1.PNG")));
+				back_btn.setIcon(new ImageIcon(Event.class.getResource("/project/staff/image/back1.PNG")));
 			}
 		});
 		

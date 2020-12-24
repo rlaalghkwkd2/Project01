@@ -25,10 +25,12 @@ public class panelBlackIn extends JPanel {
 		setLayout(null);
 
 		JLabel lblNewLabel_1 = new JLabel("\uCE74\uB4DC\uBC88\uD638:");
+		lblNewLabel_1.setFont(new Font("»ﬁ∏’∆Ì¡ˆ√º", Font.PLAIN, 16));
 		lblNewLabel_1.setBounds(12, 139, 64, 27);
 		add(lblNewLabel_1);
 
 		JLabel lblNewLabel_1_1 = new JLabel("\uB4F1\uB85D\uC0AC\uC720:");
+		lblNewLabel_1_1.setFont(new Font("»ﬁ∏’∆Ì¡ˆ√º", Font.PLAIN, 16));
 		lblNewLabel_1_1.setBounds(12, 176, 64, 27);
 		add(lblNewLabel_1_1);
 
@@ -38,7 +40,9 @@ public class panelBlackIn extends JPanel {
 		add(reason);
 
 		JButton btnNewButton = new JButton("µÓ∑œ");
-		btnNewButton.setFont(new Font("∏º¿∫ ∞ÌµÒ Semilight", Font.PLAIN, 15));
+		btnNewButton.setForeground(new Color(250, 128, 114));
+		btnNewButton.setBackground(Color.WHITE);
+		btnNewButton.setFont(new Font("»ﬁ∏’∆Ì¡ˆ√º", Font.PLAIN, 16));
 		btnNewButton.addActionListener(new Panel_BlackIn_BtnAction(this));
 
 		btnNewButton.setBounds(667, 497, 65, 26);

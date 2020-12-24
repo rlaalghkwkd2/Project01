@@ -36,6 +36,7 @@ public class panelSearch extends JPanel {
 	Vector rowData;
 	private final JPanel panelTitle = new JPanel();
 	private final JLabel lblNewLabel = new JLabel("\uD68C\uC6D0 \uC870\uD68C");
+	private final JLabel lblNewLabel_1 = new JLabel("\uCE74\uB4DC\uBC88\uD638:");
 
 	public panelSearch() {
 		setBackground(new Color(255, 160, 122));
@@ -78,13 +79,13 @@ public class panelSearch extends JPanel {
 		table.setFont(new Font("∏º¿∫ ∞ÌµÒ Semilight", Font.PLAIN, 13));
 		scrollpane.setViewportView(table);
 		textSearch.addActionListener(new Panel_Search_Action(this, rowData, textSearch, table));
-		textSearch.setBounds(12, 122, 250, 26);
+		textSearch.setBounds(76, 122, 250, 26);
 		add(textSearch);
 
 		JButton btnNewButton = new JButton(new ImageIcon(img_logo));
 		btnNewButton.addActionListener(new Panel_Search_Action(this, rowData, textSearch, table));
 //		btnNewButton.setFont(new Font("∏º¿∫ ∞ÌµÒ Semilight", Font.PLAIN, 15));
-		btnNewButton.setBounds(263, 122, 35, 26);
+		btnNewButton.setBounds(328, 122, 35, 26);
 		add(btnNewButton);
 		panelTitle.setBackground(new Color(255, 245, 238));
 		panelTitle.setBounds(2, 2, 803, 69);
@@ -96,6 +97,10 @@ public class panelSearch extends JPanel {
 		lblNewLabel.setBounds(12, 10, 783, 49);
 
 		panelTitle.add(lblNewLabel);
+		lblNewLabel_1.setFont(new Font("»ﬁ∏’∆Ì¡ˆ√º", Font.PLAIN, 16));
+		lblNewLabel_1.setBounds(12, 122, 63, 26);
+		
+		add(lblNewLabel_1);
 		ShowTable();
 	}
 

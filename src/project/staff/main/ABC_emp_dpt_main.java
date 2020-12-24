@@ -20,6 +20,7 @@ import javax.swing.JMenuBar;
 
 public class ABC_emp_dpt_main extends JFrame {
 	private JPanel contentPane;
+	public static JPanel panel = new JPanel();
 
 	/**
 	 * Launch the application.
@@ -40,14 +41,14 @@ public class ABC_emp_dpt_main extends JFrame {
 	public ABC_emp_dpt_main() {	
 		setTitle("직원, 부서 기능 모음");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(300, 300, 1700, 800);
+		setBounds(265, 15, 807, 533);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(new BorderLayout(0, 0));
 		
-		JPanel panel = new JPanel();
+		
 		panel.setBackground(new Color(255, 215, 0));
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
@@ -67,8 +68,7 @@ public class ABC_emp_dpt_main extends JFrame {
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				btn1.setIcon(new ImageIcon(ABC_emp_dpt_main.class.getResource("/project/staff/image/click.PNG")));
-			}
-			
+			}			
 			@Override
 			public void mouseExited(MouseEvent e) {
 				btn1.setIcon(new ImageIcon(ABC_emp_dpt_main.class.getResource("/project/staff/image/attendance.PNG")));
@@ -150,7 +150,7 @@ public class ABC_emp_dpt_main extends JFrame {
 		lblNewLabel_1_2.setFont(new Font("맑은 고딕", Font.BOLD | Font.ITALIC, 15));
 		lblNewLabel_1_2.setBounds(693, 261, 70, 30);
 		panel.add(lblNewLabel_1_2);
-		
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
 	}
 }

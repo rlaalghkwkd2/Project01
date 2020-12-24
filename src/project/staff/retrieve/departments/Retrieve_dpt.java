@@ -10,19 +10,13 @@ import java.util.Properties;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
-public class Retrieve_dpt {
+import project.Payment.team.Hikariconfig;
 
+public class Retrieve_dpt {
+	HikariDataSource ds = null;
 	String dpt_info = null;
 	   public Retrieve_dpt(int dpt_id) {
-			Properties props = new Properties();
-		   	 props.setProperty("JdbcUrl", "jdbc:oracle:thin:@localhost:1521/XEPDB1");
-			      props.setProperty("dataSource.user", "hr");
-			      props.setProperty("dataSource.password", "123");
-			      props.setProperty("dataSource.databaseName", "XEPDB1");
-			      props.put("dataSource.logWriter", new PrintWriter(System.out));
-			      
-			      HikariConfig config = new HikariConfig(props);
-			      HikariDataSource ds = new HikariDataSource(config);
+		   ds = new Hikariconfig().config();
 	      
 	      try {
 	         Connection conn = ds.getConnection();

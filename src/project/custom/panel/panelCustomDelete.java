@@ -50,8 +50,10 @@ public class panelCustomDelete extends JPanel {
 		textSearch.addActionListener(new Panel_CustomDelete_Action(this));
 		
 		JButton btnDelete = new JButton("\uC0AD\uC81C");
+		btnDelete.setForeground(Color.RED);
+		btnDelete.setBackground(Color.WHITE);
 		btnDelete.setBounds(667, 497, 65, 26);
-		btnDelete.setFont(new Font("∏º¿∫ ∞ÌµÒ Semilight", Font.PLAIN, 15));
+		btnDelete.setFont(new Font("»ﬁ∏’∆Ì¡ˆ√º", Font.PLAIN, 16));
 		add(btnDelete);
 		btnDelete.addActionListener(new Panel_CustomDeleted_Action(this));
 		

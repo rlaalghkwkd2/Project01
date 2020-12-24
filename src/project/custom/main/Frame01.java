@@ -172,7 +172,7 @@ public class Frame01 extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				menuClicked(panelCustomDelete);
-				panelCustomDelete.textSearch.setText("");
+				panelCustomDelete.textArea.setText("");
 				
 			}
 		});
@@ -213,7 +213,7 @@ public class Frame01 extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				menuClicked(panelBlackDelete);
-				new panelBlackDelete();			
+//				new panelBlackDelete();			
 			}
 		});
 		panelBlackDeletes.setLayout(null);
