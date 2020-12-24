@@ -3,9 +3,11 @@ package project.stock.add_new_shoes;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -15,6 +17,8 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Text;
+
+import project.custom.main.Frame01;
 
 import javax.swing.JTextArea;
 
@@ -26,7 +30,11 @@ public class add_new_shoes2 extends JFrame{
 	private JTextField textPrice;
 	private JTextField textStorage;
 	private JPanel contentPane;
+	
+	
+	
 	public static JPanel panel = new JPanel();
+	
 	public add_new_shoes2() {
 		
 		setTitle("직원, 부서 기능 모음");
@@ -135,11 +143,17 @@ public class add_new_shoes2 extends JFrame{
 						Integer.parseInt(textPrice.getText()), textStorage.getText());
 				textArea.append("[상품 등록 정보]\n\n");
 				textArea.append("[시리얼넘버]: " + textNumber.getText() +"\n\n");
-				textArea.append("[창고위치]: " + textNumber.getText()+"\n\n");
-				textArea.append("[제품명]: " + textNumber.getText()+"\n\n");
-				textArea.append("[사이즈]: " + textNumber.getText()+"\n\n");
-				textArea.append("[수량]: " + textNumber.getText()+"\n\n");
-				textArea.append("[가격]: " + textNumber.getText());
+				textArea.append("[창고위치]: " + textStorage.getText()+"\n\n");
+				textArea.append("[제품명]: " + textProductName.getText()+"\n\n");
+				textArea.append("[사이즈]: " + textSize.getText()+"\n\n");
+				textArea.append("[수량]: " + textQuantity.getText()+"\n\n");
+				textArea.append("[가격]: " + textPrice.getText());
+//				
+//			
+				new add_new_shoes().add_new_shoess(textNumber.getText(), textStorage.getText(),
+						textProductName.getText(),
+						Integer.parseInt(textSize.getText()), Integer.parseInt(textQuantity.getText()),
+						Integer.parseInt(textPrice.getText()));
 				
 				textNumber.setText("");
 				textProductName.setText("");

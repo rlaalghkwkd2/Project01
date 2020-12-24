@@ -1,34 +1,40 @@
 package project.stock.add_new_shoes;
 
+import java.awt.Image;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+
+import javax.swing.ImageIcon;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
 import project.Payment.team.Hikariconfig;
+import project.custom.main.Frame01;
 
 public class add_new_shoes {
 	String a = null;
 	HikariDataSource ds = null;
-	public void add_new_shoess(String sh_serial_number, String sh_name, int sh_size, int st_info, int sh_price,
-			String br_storage_lct) {
+	
+	
+	
+	public void add_new_shoess(String sh_serial_number,String br_storage_lct,  String sh_name, int sh_size, int st_info, int sh_price) {
 	
 		ds = new Hikariconfig().config();
 		try {
 			Connection conn = ds.getConnection();
 
 			PreparedStatement pstmt = conn.prepareStatement(
-					"insert into shoes(sh_serial_number,sh_name,sh_size,st_info,sh_price,br_storage_lct)"
-							+ "values(?,?,?,?,?,?)");
+					"insert into shoes values(?,?,?,?,?,?,waiting_num.nextval)");
 
 			pstmt.setString(1, sh_serial_number);
-			pstmt.setString(2, sh_name);
-			pstmt.setInt(3, sh_size);
-			pstmt.setInt(4, st_info);
-			pstmt.setInt(5, sh_price);
-			pstmt.setString(6, br_storage_lct);
+			pstmt.setString(2, br_storage_lct);
+			pstmt.setString(3, sh_name);
+			pstmt.setInt(4, sh_size);
+			pstmt.setInt(5, st_info);
+			pstmt.setInt(6, sh_price);
+			
 			System.out.println("신규 상품 등록 완료");
 			pstmt.executeUpdate();
 

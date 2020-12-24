@@ -184,15 +184,15 @@ public class Record {
 				if (rs.getString("sh_name").length() < 10) {
 					tmp = rs.getInt("sales_number") + "\t" + rs.getString("sh_name") + "\t\t" + rs.getInt("sh_count")
 							+ "\t" + rs.getInt("sh_size") + "\t" + rs.getInt("sh_price") + "\t"
-							+ rs.getDate("purchase_day") + "\t" + rs.getInt("current_point") + "\n";
+							+ rs.getString("purchase_day") + "\t" + rs.getInt("current_point") + "\n";
 				} else {
 					tmp = rs.getInt("sales_number") + "\t" + rs.getString("sh_name") + "\t" + rs.getInt("sh_count")
 							+ "\t" + rs.getInt("sh_size") + "\t" + rs.getInt("sh_price") + "\t"
-							+ rs.getDate("purchase_day") + "\t" + rs.getInt("current_point") + "\n";
+							+ rs.getString("purchase_day") + "\t" + rs.getInt("current_point") + "\n";
 				}
 				ta.append("  " + tmp);
 				total += rs.getInt("sh_price");
-
+ //제가 저거 날짜 데이트타입으로넣을줄몰라가지고 스트링으로해서넣어가지고
 			}
 			ta.append("\n\n\t\t\t\t\t총판매액\t" + NumberFormat.getInstance().format(total) + "￦");
 

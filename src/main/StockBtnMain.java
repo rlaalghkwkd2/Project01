@@ -2,6 +2,7 @@ package main;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -10,17 +11,26 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
+import project.custom.main.Frame01;
 import project.staff.main.ABC_emp_dpt_main;
 import project.stock.add_new_shoes.add_new_shoes2;
 import project.stock.find_br_day.find_br_day2;
 import project.stock.inventory.add_inventory2;
 import project.stock.sh_name.sh_name2;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 public class StockBtnMain extends JPanel {
 	private JPanel contentPane;
-
+	private Image img_logo = new ImageIcon(Frame01.class.getResource("/project/stock/image/psearch.png")).getImage().getScaledInstance(249,
+			142, Image.SCALE_SMOOTH);
+	private Image img_logo1 = new ImageIcon(Frame01.class.getResource("/project/stock/image/input.png")).getImage().getScaledInstance(249,
+			142, Image.SCALE_SMOOTH);
+	private Image img_logo2 = new ImageIcon(Frame01.class.getResource("/project/stock/image/envent.png")).getImage().getScaledInstance(249,
+			142, Image.SCALE_SMOOTH);
+	private Image img_logo3 = new ImageIcon(Frame01.class.getResource("/project/stock/image/pyu.png")).getImage().getScaledInstance(249,
+			142, Image.SCALE_SMOOTH);
 	public StockBtnMain() {
 
 		setBorder(new LineBorder(new Color(0, 0, 0), 2));
@@ -50,7 +60,7 @@ public class StockBtnMain extends JPanel {
 		lblNewLabel.setBounds(12, 10, 755, 73);
 		panel.add(lblNewLabel);
 		
-		JButton ProductBtn = new JButton("New button");
+		JButton ProductBtn = new JButton(new ImageIcon(img_logo1));
 		ProductBtn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -61,7 +71,7 @@ public class StockBtnMain extends JPanel {
 		ProductBtn.setBounds(12, 173, 250, 150);
 		panelin.add(ProductBtn);
 		
-		JButton btnNewButton_1 = new JButton("New button");
+		JButton btnNewButton_1 = new JButton(new ImageIcon(img_logo2));
 		btnNewButton_1.addActionListener(new ActionListener() {			
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -71,7 +81,7 @@ public class StockBtnMain extends JPanel {
 		btnNewButton_1.setBounds(12, 370, 250, 150);
 		panelin.add(btnNewButton_1);
 		
-		JButton btnNewButton_2 = new JButton("New button");
+		JButton btnNewButton_2 = new JButton(new ImageIcon(img_logo));
 		btnNewButton_2.addActionListener(new ActionListener() {		
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -95,7 +105,7 @@ public class StockBtnMain extends JPanel {
 		lblProduct_1_1.setBounds(573, 274, 176, 36);
 		panelin.add(lblProduct_1_1);
 		
-		JButton btnNewButton_2_1 = new JButton("New button");
+		JButton btnNewButton_2_1 = new JButton(new ImageIcon(img_logo3));
 		btnNewButton_2_1.setBounds(541, 370, 250, 150);
 		panelin.add(btnNewButton_2_1);
 		btnNewButton_2_1.addActionListener(new ActionListener() {			

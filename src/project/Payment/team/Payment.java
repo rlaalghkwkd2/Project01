@@ -8,12 +8,14 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import javax.crypto.spec.PSource;
+
 import com.zaxxer.hikari.HikariDataSource;
 
 public class Payment {
 	HikariDataSource ds = null;
-	int point = 0;
-	int sh_id = 0;
+	
+	
 	double saving_rate = 0.02;
 
 	public Payment() {
@@ -90,8 +92,10 @@ public class Payment {
 			
 			rs = pstmt.executeQuery();
 
-			String sales_number = "sales_number.currval";
+			pstmt = conn.prepareStatement("SELECT sales_number.nextval FROM ssn");
+			rs = pstmt.executeQuery(); // 이게없어서 에러가나는거였네요  아
 
+			String sales_number = "sales_number.currval";
 			pstmt = conn.prepareStatement("INSERT INTO product_record VALUES (" + sales_number + ", " // 시퀀스번호
 //			pstmt = conn.prepareStatement("INSERT INTO product_record VALUES (sales_number.nextval,"  // 시퀀스번호
 					+ "?, " // 시리얼넘버
@@ -101,7 +105,7 @@ public class Payment {
 					+ "?, " // 제품가격
 					+ "sysdate," + "?)"); // 회원카드결제확인
 			
-			pstmt = conn.prepareStatement("SELECT sales_number.nextval FROM ssn");
+			
 			for (Entry<String, Integer[]> entry : productlist.entrySet()) {
 
 				String shose_name = entry.getKey().split(" - ")[0];
@@ -141,6 +145,8 @@ public class Payment {
 
 	public int MemberPay(Map<String, Integer[]> productlist, String cardnumber) {
 		int check = -1;
+		int sh_id = 0;
+		int point = 0;
 		try {
 			Connection conn = ds.getConnection();
 
@@ -154,16 +160,16 @@ public class Payment {
 				pstmt.setInt(3, entry.getValue()[2]);
 				rs = pstmt.executeQuery();
 			}
-
+			
 			pstmt = conn.prepareStatement("SELECT sales_number.nextval FROM ssn");
 			rs = pstmt.executeQuery();
 
 			String sales_number = "sales_number.currval";
 
-			pstmt = conn.prepareStatement("INSERT INTO product_record VALUES (sales_number.nextval," // 시퀀스번호
+			pstmt = conn.prepareStatement("INSERT INTO product_record VALUES ("+sales_number +"," // 시퀀스번호
 					+ "?, " // 시리얼넘버
 					+ "?, " // 제품이름
-					+ "?, " // 제품사이즈
+					+ "?, " // 제품사이즈 
 					+ "?, " // 제품수량
 					+ "?, " // 제품가격
 					+ "sysdate," + "?)"); // 회원카드결제확인
@@ -176,7 +182,7 @@ public class Payment {
 				pstmt.setInt(4, entry.getValue()[1]);
 				pstmt.setInt(5, entry.getValue()[0] * entry.getValue()[1]);
 				pstmt.setString(6, "o");
-				point = (int) (Math.floor(entry.getValue()[0] * entry.getValue()[1]) * 0.02);
+				//point = (int) (Math.floor(entry.getValue()[0] * entry.getValue()[1]) * 0.02);
 				rs = pstmt.executeQuery();
 			}
 
@@ -425,12 +431,13 @@ public class Payment {
 		try {
 			Connection conn = ds.getConnection();
 
-			PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM ABC" + cardnumber);
+			PreparedStatement pstmt = conn.prepareStatement("select * from CUSTOM WHERE CARD = " + cardnumber);
+			
 			ResultSet rs = pstmt.executeQuery();
 
 			if (rs.next()) {
 				check = true;
-			}
+			} 
 
 			if (rs != null)
 				rs.close();

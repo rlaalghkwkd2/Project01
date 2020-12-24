@@ -52,9 +52,10 @@ insert into shoes(sh_name,sh_serial_number,sh_size,st_info,additional_inventory)
 
 CREATE TABLE shoes(
     shoes_serial_number NUMBER(7), -- 시리얼넘버
-    sh_name VARCHAR2(40),		-- 신발이름
-    sh_price NUMBER(8),	 -- 가격
+    sh_name VARCHAR2(40),		-- 신발이름  	
     sh_size NUMBER(4), -- 사이즈
     st_info NUMBER(3), -- 재고
+     sh_price NUMBER(8), -- 가격
     st_sales NUMBER(3) -- 결제번호
+    br_storage_lct vachar(3)  -- 창고위치 
 );

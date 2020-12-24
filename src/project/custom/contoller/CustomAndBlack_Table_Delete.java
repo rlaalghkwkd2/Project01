@@ -34,9 +34,14 @@ public class CustomAndBlack_Table_Delete {
 				PreparedStatement pstmt3 = conn.prepareStatement(sql3);
 				pstmt3.executeUpdate();
 				
+				String sql4 = "DROP SEQUENCE custom_seq";
+				PreparedStatement pstmt4 = conn.prepareStatement(sql4);
+				pstmt4.executeUpdate();
+				
 				if(pstmt != null) pstmt.close();	
 				if(pstmt2 != null) pstmt.close();	
 				if(pstmt3 != null) pstmt.close();	
+				if(pstmt4 != null) pstmt.close();	
 				if(conn != null) conn.close();
 			} catch (SQLException e) {
 			

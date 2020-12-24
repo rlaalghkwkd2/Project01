@@ -204,8 +204,13 @@ public class center_payment extends JPanel {
 					if (pay.Membercheck(resultStr)) {
 						if (pay.MemberPay(shoes_list, resultStr) != -1) {
 							JOptionPane.showMessageDialog(null, "결제완료");
+							list.setLength(0);
+							arr = null;
+							total = 0;
+							serialnumbers = "";
 							ta.setText("");
 							total_view.setText("");
+
 						} else {
 							JOptionPane.showMessageDialog(null, "결제에 실패했습니다.");
 						}
@@ -226,6 +231,10 @@ public class center_payment extends JPanel {
 				if (shoes_list != null) {
 					if (pay.pay(shoes_list) != -1) {
 						JOptionPane.showMessageDialog(null, "결제완료");
+						list.setLength(0);
+						arr = null;
+						total = 0;
+						serialnumbers = "";
 						ta.setText("");
 						total_view.setText("");
 					} else {

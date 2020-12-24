@@ -84,9 +84,10 @@ public class swingtest extends JFrame{
 		center_right.setPreferredSize(new Dimension(500,800));
 		center.add(center_main,BorderLayout.CENTER);
 		
-		center_main.add(center_center, "main");
-		center_main.add(center_record, "record");
+		//center_main.add(center_center, "main");
 		center_main.add(center_payment, "payment");
+		center_main.add(center_record, "record");
+		
 		
 		center_center.add(center_left, BorderLayout.CENTER);
 		center_center.add(center_right, BorderLayout.EAST);

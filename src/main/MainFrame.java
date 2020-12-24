@@ -126,7 +126,7 @@ public class MainFrame extends JFrame {
 		customPanel.setBounds(0, 242, 249, 40);
 		panelMenu.add(customPanel);
 
-		JLabel lblIn = new JLabel("Cusotm");
+		JLabel lblIn = new JLabel("Custom");
 		lblIn.setHorizontalAlignment(SwingConstants.CENTER);
 		lblIn.setFont(new Font("휴먼편지체", Font.BOLD, 16));
 		lblIn.setBounds(12, 10, 225, 20);

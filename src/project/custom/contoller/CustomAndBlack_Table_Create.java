@@ -52,8 +52,15 @@ public class CustomAndBlack_Table_Create {
 			PreparedStatement pstmt2 = conn.prepareStatement(sql2);
 			pstmt2.executeUpdate();
 			
+			
+			String sql3 = "CREATE SEQUENCE custom_seq  START WITH 1 MINVALUE 1 INCREMENT BY 1";
+			PreparedStatement pstmt3 = conn.prepareStatement(sql3);
+			pstmt3.executeUpdate();
+			
+			
 			if(pstmt != null) pstmt.close();	
 			if(pstmt2 != null) pstmt.close();	
+			if(pstmt3 != null) pstmt.close();	
 			if(conn != null) conn.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
